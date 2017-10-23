@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <h1>All Blog Posts</h1>
+        <hr>
+        {% for post in posts %}
+        <h3><a href="/blog?id={{post.id}}">{{post.title}}</a></h3>
+            <p>{{post.body}}</p>
+            <p>Written by <a href="/user?id={{post.user.id}}">{{post.user.username}}</a></p>
+            <br>
+        {% endfor %}
+    </div>
+</div>
+{%endblock%}
